@@ -10,7 +10,10 @@ public class TTTBoard {
     public void createBoard() {
         for (int r = 0; r < ROW; r++) {
             for (int c = 0; c < COL; c++) {
-                Board[r][c] = new TicTacToeButton(r, c);
+                if (Board[r][c] == null) {
+                    Board[r][c] = new TicTacToeButton(r, c);
+                }
+                Board[r][c].setPlayer("");
             }
         }
     }
